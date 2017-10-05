@@ -42,7 +42,7 @@ function rotateZ(p, a){
     var ca = Math.cos(a);
     return {
         x: p.x * ca - p.y * sa,
-        y: p.y * sa + p.y * ca,
+        y: p.x * sa + p.y * ca,
         z: p.z
     };
 }
