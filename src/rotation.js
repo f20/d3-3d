@@ -6,15 +6,15 @@ export function rotateRzRyRx(po, angles){
     po.y -= rc[1];
     po.z -= rc[2];
 
-    var rz = rotateZ(po, angles.z);
-    var ry = rotateY(rz, angles.y);
-    var rx = rotateX(ry, angles.x);
+    var ry = rotateY(po, angles.y);
+    var ryx = rotateX(ry, angles.x);
+    var ra = rotateZ(ryx, angles.z);
 
-    rx.x += rc[0];
-    rx.y += rc[1];
-    rx.z += rc[2];
+    ra.x += rc[0];
+    ra.y += rc[1];
+    ra.z += rc[2];
 
-    return rx;
+    return ra;
 }
 
 function rotateX(p, a){
